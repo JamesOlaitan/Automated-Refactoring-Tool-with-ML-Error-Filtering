@@ -178,12 +178,12 @@ def analyze_file(file_path: str) -> Tuple[List[Any], List[Any], List[Any]]:
         print(f"Error processing {file_path}: {e}")
         return [], [], []
 
-    # Initialize detectors
+    # Initializes detectors
     loop_detector = ForLoopDetector()
     nested_if_detector = NestedIfDetector()
     if_chain_detector = IfElseChainDetector()
 
-    # Visit the AST
+    # Visits the AST
     loop_detector.visit(tree)
     nested_if_detector.visit(tree)
     if_chain_detector.visit(tree)

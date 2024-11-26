@@ -15,11 +15,11 @@ def main():
     input_path = args.input_path
     verbose = args.verbose
 
-    # Analyze the input path
+    # Analyzes the input path
     if os.path.isfile(input_path):
         analyze_and_report(input_path, verbose)
     elif os.path.isdir(input_path):
-        # Analyze all .py files in the directory
+        # Analyzes all .py files in the directory
         for root, _, files in os.walk(input_path):
             for file in files:
                 if file.endswith('.py'):
