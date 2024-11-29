@@ -1,6 +1,6 @@
 import pytest
 import os
-from parser import analyze_file
+from refactoring_tool.code_parser import analyze_file
 
 @pytest.fixture
 def sample_code_dir():

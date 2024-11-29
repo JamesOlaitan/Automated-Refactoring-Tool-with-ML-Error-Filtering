@@ -1,0 +1,7 @@
+include README.md
+
+include LICENSE
+
+recursive-include refactoring_tool *.py
+
+recursive-include tests/sample_code *.py
