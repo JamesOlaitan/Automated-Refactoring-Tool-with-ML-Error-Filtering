@@ -1,7 +1,7 @@
 import sys
 import argparse
 import os
-from .code_parser import analyze_file
+from code_parser import analyze_file
 
 def main():
     """
