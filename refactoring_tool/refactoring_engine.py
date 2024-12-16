@@ -292,7 +292,7 @@ def wrap_body_in_expression(body):
     if len(body) == 1 and isinstance(body[0], ast.Expr):
         return body[0].value
 
-    # Otherwise, just returns a Constant(None)
+    # Otherwise, returns a Constant(None)
     return ast.Constant(value=None)
 
 class RefactoringEngine:
