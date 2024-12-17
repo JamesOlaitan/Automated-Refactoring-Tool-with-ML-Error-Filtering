@@ -43,9 +43,8 @@ An automated refactoring tool that identifies specific code patterns (for loops 
 
    ```bash
    pip install -e .
-*This installs the tool in editable mode. Additionally, ensure required dependencies like radon, pandas, and scikit-learn are installed:*
+  *This installs the tool in editable mode. Additionally, ensure required dependencies like radon, pandas, and scikit-learn are installed:*
    ```bash
    pip install radon pandas scikit-learn
-
 
 ## Usage
