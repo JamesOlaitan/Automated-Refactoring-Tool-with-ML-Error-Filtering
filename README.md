@@ -55,3 +55,10 @@ Run the CLI to detect refactoring opportunities:
 
    ```bash
    refactor path/to/your_script.py
+
+- The tool will print out detected issues (inefficient loops, nested ifs, and if-elif-else chains).
+- If run on a directory, it analyzes all .py files within it.
+- Use -v for verbose output:
+
+   ```bash
+   refactor path/to/your_script.py -v
