@@ -2,6 +2,7 @@
 
 An automated refactoring tool that identifies specific code patterns (for loops and nested if-else statements) in Python codebases, refactors them to more efficient or readable forms, and uses machine learning (via TensorFlow) to predict and filter out refactorings that may introduce errors.
 
+
 ## Project Structure
 
 - **refactoring_tool/**: Contains the main application code.
@@ -25,6 +26,7 @@ An automated refactoring tool that identifies specific code patterns (for loops 
 - **data/** (optional): Directory to store training data (user-provided CSV).
 - **models/** (optional): Directory to store the trained ML model file (`model.pkl`).
 
+
 ## Installation
 
 1. **Clone the Repository**
@@ -43,9 +45,12 @@ An automated refactoring tool that identifies specific code patterns (for loops 
 
    ```bash
    pip install -e .
-    *This installs the tool in editable mode. Additionally, ensure required dependencies like radon, pandas, and scikit-learn are installed:*
+
+   *This installs the tool in editable mode. Additionally, ensure required dependencies like radon, pandas, and scikit-learn are installed:*
+
    ```bash
    pip install radon pandas scikit-learn
+
 
 ## Usage
 
