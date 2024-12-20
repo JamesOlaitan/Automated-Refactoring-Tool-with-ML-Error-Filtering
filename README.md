@@ -50,7 +50,7 @@ An automated refactoring tool that identifies specific code patterns (for loops 
 
    ```bash
    pip install radon pandas scikit-learn
-
+   ```
 
 ## Usage
 
@@ -67,3 +67,13 @@ Run the CLI to detect refactoring opportunities:
 
    ```bash
    refactor path/to/your_script.py -v
+
+
+## Using the ML Error Filter
+
+**Overview**
+
+The ML component (ml_filter.py) predicts whether a given refactoring might introduce errors. This requires:
+- A labeled dataset of refactorings (both successful and failed)
+- Training a model on this dataset
+- Using the trained model to filter out risky refactorings before applying them
