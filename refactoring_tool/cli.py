@@ -107,6 +107,21 @@ def process_file(file_path: str, output_dir: str, verbose: bool):
     write_refactored_file(file_path, output_dir, refactored_code)
 
 
+def write_original_file(file_path: str, output_dir: str):
+    """
+    Copies the original file into the output directory without changes.
+
+    :param file_path: Path to the original file.
+    :type file_path: str
+    :param output_dir: Directory to write the file.
+    :type output_dir: str
+    """
+    code = read_python_file(file_path)
+    write_path = os.path.join(output_dir, os.path.basename(file_path))
+    with open(write_path, 'w', encoding='utf-8') as f:
+        f.write(code)
+
+
 def analyze_and_report(file_path: str, verbose: bool = False):
     """
     Analyzes a single file and reports detected issues.
