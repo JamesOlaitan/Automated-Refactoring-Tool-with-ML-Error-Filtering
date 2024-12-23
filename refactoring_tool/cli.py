@@ -107,6 +107,40 @@ def process_file(file_path: str, output_dir: str, verbose: bool):
     write_refactored_file(file_path, output_dir, refactored_code)
 
 
+
+def apply_refactorings(file_path: str) -> str:
+    """
+    Applies refactorings to the given file and returns the refactored code as a string.
+
+    Steps:
+    - Parse the file into AST.
+    - Identify nodes that can be refactored (loops, nested ifs, if chains).
+    - Apply transformations using RefactoringEngine.
+    - Convert AST back to code using astor.
+
+    :param file_path: Path to the Python file.
+    :type file_path: str
+    :return: Refactored code or None if refactoring fails.
+    :rtype: str or None
+    """
+    try:
+        original_code = read_python_file(file_path)
+        tree = generate_ast(original_code)
+    except Exception as e:
+        logging.warning(f"Could not parse {file_path}: {e}")
+        return None
+
+    engine = RefactoringEngine()
+    transformed_tree = refactor_ast(tree, engine)
+
+    try:
+        refactored_code = astor.to_source(transformed_tree)
+        return refactored_code
+    except Exception as e:
+        logging.warning(f"Error converting AST back to code for {file_path}: {e}")
+        return None
+
+        
 def write_original_file(file_path: str, output_dir: str):
     """
     Copies the original file into the output directory without changes.
@@ -120,6 +154,22 @@ def write_original_file(file_path: str, output_dir: str):
     write_path = os.path.join(output_dir, os.path.basename(file_path))
     with open(write_path, 'w', encoding='utf-8') as f:
         f.write(code)
+
+
+def write_refactored_file(file_path: str, output_dir: str, refactored_code: str):
+    """
+    Writes the refactored code to the output directory.
+
+    :param file_path: Path to the original file.
+    :type file_path: str
+    :param output_dir: Directory to write the refactored code.
+    :type output_dir: str
+    :param refactored_code: The transformed code.
+    :type refactored_code: str
+    """
+    write_path = os.path.join(output_dir, os.path.basename(file_path))
+    with open(write_path, 'w', encoding='utf-8') as f:
+        f.write(refactored_code)
 
 
 def analyze_and_report(file_path: str, verbose: bool = False):
