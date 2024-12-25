@@ -77,3 +77,17 @@ The ML component (ml_filter.py) predicts whether a given refactoring might intro
 - A labeled dataset of refactorings (both successful and failed)
 - Training a model on this dataset
 - Using the trained model to filter out risky refactorings before applying them
+
+**Logging Failed Refactorings**
+
+When you encounter a refactoring that doesn’t work out (e.g., the code breaks tests, runtime errors), log it into a CSV file to build a dataset. Your CSV file (data/dataset.csv) should have the following columns:
+
+- code_before: The exact code snippet before the refactoring.
+- code_after: The refactored code snippet.
+- error_introduced: 1 if the refactoring introduced an error, 0 otherwise.
+
+**Example CSV Row:**
+
+   ```bash
+   code_before,code_after,error_introduced
+"result = []\nfor i in items:\n    result.append(i*2)","result = [i*2 for i in items]",0
