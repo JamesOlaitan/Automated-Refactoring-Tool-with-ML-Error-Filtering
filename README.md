@@ -91,3 +91,11 @@ When you encounter a refactoring that doesn’t work out (e.g., the code breaks 
    ```bash
    code_before,code_after,error_introduced
 "result = []\nfor i in items:\n    result.append(i*2)","result = [i*2 for i in items]",0
+
+If you encountered a failed refactoring:
+
+   ```bash
+   code_before,code_after,error_introduced
+"integer = 30\nif integer % 2 == 0:\n    if integer % 3 == 0:\n        print('divisible')","integer = 30\nif (integer % 2 == 0 and integer % 3 == 0):\n    print('divisible')",1
+
+Over time, accumulate multiple such examples. The more data you provide, the better the model can learn.
