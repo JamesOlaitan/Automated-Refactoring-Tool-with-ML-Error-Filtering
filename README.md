@@ -99,3 +99,17 @@ If you encountered a failed refactoring:
 "integer = 30\nif integer % 2 == 0:\n    if integer % 3 == 0:\n        print('divisible')","integer = 30\nif (integer % 2 == 0 and integer % 3 == 0):\n    print('divisible')",1
 
 Over time, accumulate multiple such examples. The more data you provide, the better the model can learn.
+
+
+##Training the Model
+
+Once you have a sufficient dataset:
+
+   ```bash
+   python refactoring_tool/ml_filter.py train --data data/dataset.csv
+
+This command:
+	•	Loads the dataset.
+	•	Extracts features (complexity, length, nesting, variable usage).
+	•	Trains a Random Forest model with hyperparameter tuning.
+	•	Saves the best model as models/model.pkl.
