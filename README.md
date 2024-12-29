@@ -101,7 +101,7 @@ If you encountered a failed refactoring:
 Over time, accumulate multiple such examples. The more data you provide, the better the model can learn.
 
 
-##Training the Model
+## Training the Model
 
 Once you have a sufficient dataset:
 
@@ -109,7 +109,23 @@ Once you have a sufficient dataset:
    python refactoring_tool/ml_filter.py train --data data/dataset.csv
 
 This command:
-	•	Loads the dataset.
-	•	Extracts features (complexity, length, nesting, variable usage).
-	•	Trains a Random Forest model with hyperparameter tuning.
-	•	Saves the best model as models/model.pkl.
+- Loads the dataset.
+- Extracts features (complexity, length, nesting, variable usage).
+- Trains a Random Forest model with hyperparameter tuning.
+- Saves the best model as models/model.pkl.
+
+## Using the Model to Predict Error Likelihood
+
+After training, you can predict error probability for a given refactoring:
+
+
+   ```bash
+   python refactoring_tool/ml_filter.py predict --before path/to/code_before.py --after path/to/code_after.py
+
+   This loads the model and prints the predicted probability of error introduction. For example:
+   ```bash
+   Predicted error probability: 0.23
+
+You can integrate this prediction step into your refactoring pipeline:
+- If the probability is high, skip the refactoring.
+- If low, proceed.
