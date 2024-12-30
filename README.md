@@ -129,3 +129,7 @@ After training, you can predict error probability for a given refactoring:
 You can integrate this prediction step into your refactoring pipeline:
 - If the probability is high, skip the refactoring.
 - If low, proceed.
+
+## License
+
+This project is licensed under the MIT License.
