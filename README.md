@@ -137,4 +137,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For questions, suggestions, or contributions, open an issue or contact xxx
+For questions, suggestions, or contributions, open an issue or contact olaitan@uni.minerva.edu
