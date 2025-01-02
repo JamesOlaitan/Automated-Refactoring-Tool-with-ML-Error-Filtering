@@ -50,7 +50,6 @@ An automated refactoring tool that identifies specific code patterns (for loops 
 
    ```bash
    pip install radon pandas scikit-learn
-   ```
 
 ## Usage
 
