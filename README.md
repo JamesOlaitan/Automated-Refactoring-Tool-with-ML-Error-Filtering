@@ -120,10 +120,12 @@ After training, you can predict error probability for a given refactoring:
 
    ```bash
    python refactoring_tool/ml_filter.py predict --before path/to/code_before.py --after path/to/code_after.py
-
+   ```
+   
    This loads the model and prints the predicted probability of error introduction. For example:
    ```bash
    Predicted error probability: 0.23
+   ```
 
 You can integrate this prediction step into your refactoring pipeline:
 - If the probability is high, skip the refactoring.
