@@ -72,7 +72,7 @@ Run the CLI to detect refactoring opportunities:
 
 **Overview**
 
-The ML component (ml_filter.py) predicts whether a given refactoring might introduce errors. This requires:
+The ML component (ml_filter.py), which is decoupled, allowing independent improvement of features and models, predicts whether a given refactoring might introduce errors. This requires:
 - A labeled dataset of refactorings (both successful and failed)
 - Training a model on this dataset
 - Using the trained model to filter out risky refactorings before applying them
@@ -121,7 +121,7 @@ After training, you can predict error probability for a given refactoring:
    ```bash
    python refactoring_tool/ml_filter.py predict --before path/to/code_before.py --after path/to/code_after.py
    ```
-   
+
    This loads the model and prints the predicted probability of error introduction. For example:
    ```bash
    Predicted error probability: 0.23
