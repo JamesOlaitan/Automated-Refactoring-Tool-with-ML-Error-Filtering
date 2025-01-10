@@ -34,22 +34,26 @@ An automated refactoring tool that identifies specific code patterns (for loops 
    ```bash
    git clone https://github.com/JamesOlaitan/Automated-Refactoring-Tool-with-ML-Error-Filtering.git
    cd Automated-Refactoring-Tool-with-ML-Error-Filtering
+   ```
    
 2. **Create and Activate a Virtual Environment (Optional but Recommended)**
 
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
    
 3. **Install the Package and Dependencies**
 
    ```bash
    pip install -e .
+   ```
 
    *This installs the tool in editable mode. Additionally, ensure required dependencies like radon, pandas, and scikit-learn are installed:*
 
    ```bash
    pip install radon pandas scikit-learn
+   ```
 
 ## Usage
 
