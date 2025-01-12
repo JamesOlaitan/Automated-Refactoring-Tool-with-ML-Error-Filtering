@@ -146,4 +146,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For questions, suggestions, or contributions, open an issue
+For questions, suggestions, or contributions, open an issue.
