@@ -1,6 +1,6 @@
 # Automated Refactoring Tool with ML Error Filtering
 
-An automated refactoring tool that identifies specific code patterns (for loops and nested if-else statements) in Python codebases, refactors them to more efficient or readable forms, and uses machine learning (via TensorFlow) to predict and filter out refactorings that may introduce errors.
+An automated refactoring tool that identifies specific code patterns (for loops and if-else chain statements) in Python codebases, refactors them to more efficient or readable forms, and uses machine learning (via TensorFlow) to predict and filter out refactorings that may introduce errors.
 
 
 ## Project Structure
